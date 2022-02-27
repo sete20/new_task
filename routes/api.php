@@ -19,6 +19,6 @@ route::post('logout', [App\Http\Controllers\api\auth\LoginController::class, 'Lo
 
 Route::group(['middleware' => ['auth:sanctum', 'role:superadministrator'],], function () {
 Route::get('category/{category}/article', dashboard\ArticleCategoryController::class);
-Route::get('Categories', dashboard\CategoriesController::class);
+Route::get('categories', dashboard\CategoriesController::class);
 Route::post('article/{article}', dashboard\ArticleUpdateController::class);
 });
